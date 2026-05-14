@@ -25,6 +25,7 @@
 import { useState, useMemo } from 'react';
 import { Search, Sparkles, Menu, X, Heart, ChevronRight, TrendingUp, Clock, Shuffle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 
 // Context'ler — veri ve tema yönetimi
 import { useData } from './context/DataContext';       // Araçlar, blog, favoriler, ayarlar
@@ -416,6 +417,8 @@ export default function App() {
       {selectedTool && (
         <ToolModal tool={selectedTool} onClose={() => setSelectedTool(null)} onSelectTool={(t) => setSelectedTool(t)} />
       )}
+
+      <Analytics />
     </div>
   );
 }
